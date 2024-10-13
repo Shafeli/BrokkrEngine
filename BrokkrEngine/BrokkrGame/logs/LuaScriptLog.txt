@@ -1,0 +1,7 @@
+[~DEBUG~] Script built from: ../BrokkrEngine/assets/Scripts/LuaScripts/Lua.lua
+[~DEBUG~] Script built from: ../BrokkrEngine/assets/Scripts/LuaScripts/LuaBuildTest.lua
+[~DEBUG~] Script built from: ../BrokkrEngine/assets/Scripts/LuaScripts/LuaScriptAutoBuildTest.lua
+[~DEBUG~] Script Loaded: ../BrokkrEngine/assets/Scripts/LuaScripts/Lua.lua
+[~DEBUG~] Script Destroyed: 
+[~DEBUG~] Script Destroyed: 
+[~DEBUG~] Script Destroyed: 

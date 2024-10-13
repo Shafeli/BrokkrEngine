@@ -1,0 +1,41 @@
+<Entity>
+
+    <GameEntity name="Texture Wall">
+        <TransformComponent x="460" y="100" height="50" width="50" />
+        <SpriteComponent texture="Test" />
+        <ColliderComponent overlap="dynamic" passable="no"/>
+        <HealthComponent />
+    </GameEntity>
+
+    <GameEntity name="Random Color Change wall">
+        <TransformComponent x="400" y="100" height="50" width="50" />
+        <SpriteComponent texture="Square" />
+        <ColliderComponent overlap="dynamic" passable="no"/>
+        <RandomColorComponent />
+    </GameEntity>
+
+    <GameEntity name="Random Color Change Pad">
+        <TransformComponent x="340" y="100" height="50" width="50" />
+        <SpriteComponent texture="Square" />
+        <DefaultControllerComponent up="Up" down="Down" left="Left" right="Right"/>
+        <ColliderComponent overlap="dynamic" passable="yes"/>
+        <HealthComponent/>
+        <RandomColorComponent />
+    </GameEntity>
+
+    <GameEntity name="Trap">
+        <TransformComponent x="550" y="100" width="25" height="25" />
+        <SpriteComponent texture="Square"/>
+        <RandomColorComponent />
+        <TriggerComponent x="550" y="100" width="25" height="25" eventStr="Kill" target="overlap"/>
+    </GameEntity>
+
+    <GameEntity name="Hero">
+        <TransformComponent x="400" y="170" height="50" width="50" />
+        <SpriteComponent texture="Square" />
+        <DefaultControllerComponent up='W' down="S" left="A" right="D"/>
+        <ColliderComponent overlap="dynamic" passable="yes"/>
+        <RandomColorComponent />
+    </GameEntity>
+
+</Entity>

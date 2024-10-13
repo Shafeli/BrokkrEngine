@@ -1,0 +1,4 @@
+[~INFO~] Pass Core System : Construct a RenderPipeline Subsystem!
+[~INFO~] Pass Core System : Construct a Script Manager Subsystem!
+[~INFO~] Pass Core System : Construct a World Tile Manager Subsystem!
+[~INFO~] Pass Core System : Construct a Physics Manager Subsystem!

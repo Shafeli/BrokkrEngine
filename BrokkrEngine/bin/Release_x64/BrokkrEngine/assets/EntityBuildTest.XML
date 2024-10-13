@@ -1,0 +1,85 @@
+<Entity>
+    <GameEntity>
+        <TransformComponent x="300" y="500" height="50" width="50" />
+        <SpriteComponent texture="Test" />
+        <HealthComponent />
+        <MoveRandomComponent />
+    </GameEntity>
+
+    <GameEntity>
+        <TransformComponent x="1300" y="500" height="50" width="50" />
+        <SpriteComponent texture="Test" />
+        <HealthComponent />
+        <MoveRandomComponent />
+    </GameEntity>
+
+    <GameEntity>
+        <TransformComponent x="1300" y="700" height="50" width="50" />
+        <SpriteComponent texture="Test" />
+        <HealthComponent />
+        <MoveRandomComponent />
+    </GameEntity>
+
+    <GameEntity>
+        <TransformComponent x="100" y="60" height="50" width="50" />
+        <SpriteComponent texture="Test" />
+        <HealthComponent />
+        <MoveRandomComponent />
+    </GameEntity>
+
+    <GameEntity>
+        <TransformComponent x="1440" y="700" height="50" width="50" />
+        <SpriteComponent texture="Square" />
+        <RandomColorComponent />
+        <MoveRandomComponent />
+    </GameEntity>
+
+    <GameEntity>
+        <TransformComponent x="100" y="800" height="50" width="50" />
+        <SpriteComponent texture="Square" />
+        <RandomColorComponent />
+        <MoveRandomComponent />
+    </GameEntity>
+
+    <GameEntity>
+        <TransformComponent x="1640" y="7" height="50" width="50" />
+        <SpriteComponent texture="Square" />
+        <RandomColorComponent />
+        <MoveRandomComponent />
+    </GameEntity>
+
+    <GameEntity>
+        <TransformComponent x="10" y="80" height="50" width="50" />
+        <SpriteComponent texture="Square" />
+        <RandomColorComponent />
+        <MoveRandomComponent />
+    </GameEntity>
+
+    <GameEntity>
+        <TransformComponent x="400" y="70" height="50" width="50" />
+        <SpriteComponent texture="Square" />
+        <RandomColorComponent />
+        <MoveRandomComponent />
+    </GameEntity>
+
+    <GameEntity>
+        <TransformComponent x="1110" y="800" height="50" width="50" />
+        <SpriteComponent texture="Square" />
+        <RandomColorComponent />
+        <MoveRandomComponent />
+    </GameEntity>
+
+    <GameEntity>
+        <TransformComponent x="1440" y="700" height="50" width="50" />
+        <SpriteComponent texture="Square" />
+        <RandomColorComponent />
+        <MoveRandomComponent />
+    </GameEntity>
+
+    <GameEntity>
+        <TransformComponent x="1100" y="100" height="50" width="50" />
+        <SpriteComponent texture="Square" />
+        <RandomColorComponent />
+        <MoveRandomComponent />
+    </GameEntity>
+</Entity>

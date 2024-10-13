@@ -1,0 +1,5 @@
+[~INFO~] BrokkrLogInfo Log Test
+[~DEBUG~] BrokkrLogDebug Log Test
+[~WARNING~] BrokkrLogWarning Log Test
+[~ERROR~] BrokkrLogError Log Test
+[~WARNING~] Test Passed: Brokkr Game Called Lua Function

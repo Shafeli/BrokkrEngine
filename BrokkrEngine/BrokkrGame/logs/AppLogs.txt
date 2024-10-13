@@ -1,0 +1,2 @@
+[~INFO~] Welcome to Brokkr Game Engine
+[~INFO~] SDL initialized

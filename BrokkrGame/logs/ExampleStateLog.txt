@@ -1,0 +1,4 @@
+[~INFO~] GlobalVariable : 1337
+[~DEBUG~] Hello to Lua from Brokkr Game
+[~INFO~] Success Lua.lua Executed
+[~INFO~] GlobalVariable : 1437

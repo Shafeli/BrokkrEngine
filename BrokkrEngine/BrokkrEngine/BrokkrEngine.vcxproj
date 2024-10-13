@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{9bdb273a-5971-40b7-b2e9-b733f5c25729}</ProjectGuid>
+    <RootNamespace>BrokkrEngine</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>$(SolutionDir)bin\$(Configuration)_$(Platform)\$(ProjectName)\</OutDir>
+    <IntDir>$(SolutionDir)bin_inter\$(Configuration)_$(Platform)\$(ProjectName)\</IntDir>
+    <IncludePath>$(SolutionDir)lib\SDL_Image\include;$(SolutionDir)lib\SDL\include;$(SolutionDir)lib\zlib;$(SolutionDir)bin\$(Configuration)\Lua;$(IncludePath)</IncludePath>
+    <LibraryPath>$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>$(SolutionDir)bin\$(Configuration)_$(Platform)\$(ProjectName)\</OutDir>
+    <IntDir>$(SolutionDir)bin_inter\$(Configuration)_$(Platform)\$(ProjectName)\</IntDir>
+    <IncludePath>$(SolutionDir)lib\SDL_Image\include;$(SolutionDir)lib\SDL\include;$(SolutionDir)lib\zlib;$(SolutionDir)bin\$(Configuration)\Lua;$(IncludePath)</IncludePath>
+    <LibraryPath>$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level4</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <TreatWarningAsError>false</TreatWarningAsError>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);$(SolutionDir)bin\$(Configuration)\Lua\</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_Image.lib;SDL2_TTF.lib;SDL2_Mixer.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <Lib>
+      <AdditionalLibraryDirectories>$(SolutionDir)lib\SDL\lib\x64;$(SolutionDir)lib\SDL_Mixer\lib\x64;$(SolutionDir)lib\SDL_Image\lib\x64;$(SolutionDir)lib\SDL_TTF\lib\x64;$(SolutionDir)lib\zlib\contrib\vstudio\vc14\x64\ZlibStat$(Configuration)\;$(SolutionDir)bin\$(Configuration)_$(Platform)\Lua;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_Image.lib;SDL2_TTF.lib;SDL2_Mixer.lib;zlibstat.lib;Lua.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Lib>
+    <PostBuildEvent>
+      <Command>copy "$(SolutionDir)lib\SDL\lib\x64\SDL2.dll" "$(OutDir)"
+copy "$(SolutionDir)lib\SDL_Image\lib\x64\SDL2_Image.dll" "$(OutDir)"
+copy "$(SolutionDir)lib\SDL_Image\lib\x64\libpng16-16.dll" "$(OutDir)"
+copy "$(SolutionDir)lib\SDL_Image\lib\x64\zlib1.dll" "$(OutDir)"
+copy "$(SolutionDir)lib\SDL_Image\lib\x64\libjpeg-9.dll" "$(OutDir)"
+copy "$(SolutionDir)lib\SDL_TTF\lib\x64\SDL2_ttf.dll" "$(OutDir)"
+copy "$(SolutionDir)lib\SDL_TTF\lib\x64\libfreetype-6.dll" "$(OutDir)"
+copy "$(SolutionDir)lib\SDL_Mixer\lib\x64\libmpg123-0.dll" "$(OutDir)"
+copy "$(SolutionDir)lib\SDL_Mixer\lib\x64\SDL2_mixer.dll" "$(OutDir)"
+copy "$(SolutionDir)lib\SDL_Mixer\lib\zlib\contrib\vstudio\vc14\x64\ZlibStat$(Configuration)\zlibstat.lib" "$(OutDir)"
+xcopy "$(ProjectDir)assets" "$(OutDir)assets" /s /e /i /y</Command>
+    </PostBuildEvent>
+    <ProjectReference>
+      <LinkLibraryDependencies>true</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level4</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <TreatWarningAsError>false</TreatWarningAsError>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);$(SolutionDir)bin\$(Configuration)\Lua\</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_Image.lib;SDL2_TTF.lib;SDL2_Mixer.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <Lib>
+      <AdditionalLibraryDirectories>$(SolutionDir)lib\SDL\lib\x64;$(SolutionDir)lib\SDL_Mixer\lib\x64;$(SolutionDir)lib\SDL_Image\lib\x64;$(SolutionDir)lib\SDL_TTF\lib\x64;$(SolutionDir)lib\zlib\contrib\vstudio\vc14\x64\ZlibStat$(Configuration)\;$(SolutionDir)bin\$(Configuration)_$(Platform)\Lua;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_Image.lib;SDL2_TTF.lib;SDL2_Mixer.lib;zlibstat.lib;Lua.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Lib>
+    <PostBuildEvent>
+      <Command>copy "$(SolutionDir)lib\SDL\lib\x64\SDL2.dll" "$(OutDir)"
+copy "$(SolutionDir)lib\SDL_Image\lib\x64\SDL2_Image.dll" "$(OutDir)"
+copy "$(SolutionDir)lib\SDL_Image\lib\x64\libpng16-16.dll" "$(OutDir)"
+copy "$(SolutionDir)lib\SDL_Image\lib\x64\zlib1.dll" "$(OutDir)"
+copy "$(SolutionDir)lib\SDL_Image\lib\x64\libjpeg-9.dll" "$(OutDir)"
+copy "$(SolutionDir)lib\SDL_TTF\lib\x64\SDL2_ttf.dll" "$(OutDir)"
+copy "$(SolutionDir)lib\SDL_TTF\lib\x64\libfreetype-6.dll" "$(OutDir)"
+copy "$(SolutionDir)lib\SDL_Mixer\lib\x64\libmpg123-0.dll" "$(OutDir)"
+copy "$(SolutionDir)lib\SDL_Mixer\lib\x64\SDL2_mixer.dll" "$(OutDir)"
+copy "$(SolutionDir)lib\SDL_Mixer\lib\zlib\contrib\vstudio\vc14\x64\ZlibStat$(Configuration)\zlibstat.lib" "$(OutDir)"
+xcopy "$(ProjectDir)assets" "$(OutDir)assets" /s /e /i /y</Command>
+    </PostBuildEvent>
+    <ProjectReference>
+      <LinkLibraryDependencies>true</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="Application\Application.h" />
+    <ClInclude Include="Application\Core.h" />
+    <ClInclude Include="Application\CoreSystems\CoreSubsystem\CoreSubsystem.h" />
+    <ClInclude Include="Application\DeltaTime.h" />
+    <ClInclude Include="AssetManager\AssetManager.h" />
+    <ClInclude Include="AssetManager\TextureManager\TextureManager.h" />
+    <ClInclude Include="Application\CoreSystems\CoreSystems.h" />
+    <ClInclude Include="AssetManager\XMLManager\Parsers\EntityXMLParser\EntityXMLParser.h" />
+    <ClInclude Include="EventManager\Event\PayloadComponent\CollisionPayload\CollisionPayload.h" />
+    <ClInclude Include="GameEntity\Component\BrokkrVelocity\BrokkrVelocity.h" />
+    <ClInclude Include="GameEntity\Component\BrokkrMoveController\BrokkrMoveController.h" />
+    <ClInclude Include="GameEntity\Component\MoveRandomComponent\MoveRandomComponent.h" />
+    <ClInclude Include="PhysicsManager\PhysicsManager.h" />
+    <ClInclude Include="EventManager\Event\Event.h" />
+    <ClInclude Include="EventManager\EventManager.h" />
+    <ClInclude Include="ExternalLibs\tinyxml2.h" />
+    <ClInclude Include="AssetManager\ArchiveManager\ArchiveManager.h" />
+    <ClInclude Include="GameEntityManager\GameEntityManager.h" />
+    <ClInclude Include="GameEntity\Component\Component.h" />
+    <ClInclude Include="GameEntity\GameEntity.h" />
+    <ClInclude Include="Graphics\Color\Color.h" />
+    <ClInclude Include="Graphics\Renderer\Renderer.h" />
+    <ClInclude Include="Graphics\RenderPipeline\RenderPipeline.h" />
+    <ClInclude Include="Graphics\Texture\Texture.h" />
+    <ClInclude Include="Graphics\WindowHandle\WindowHandle.h" />
+    <ClInclude Include="GameEntity\Component\RenderComponent\SpriteComponent.h" />
+    <ClInclude Include="GameEntity\Component\InputComponent\InputComponent.h" />
+    <ClInclude Include="EventManager\Event\PayloadComponent\PayloadComponent.h" />
+    <ClInclude Include="GameEntity\Component\RandomColorComponent\RandomColorComponent.h" />
+    <ClInclude Include="GameEntity\Component\HealthComponent\HealthComponent.h" />
+    <ClInclude Include="GameEntity\Component\ColliderComponent\ColliderComponent.h" />
+    <ClInclude Include="AssetManager\ScriptManager\ScriptAssetLoader.h" />
+    <ClInclude Include="AssetManager\ScriptManager\ScriptAssets\LuaScript.h" />
+    <ClInclude Include="AssetManager\XMLManager\Parsers\MapXMLParser\MapXMLParser.h" />
+    <ClInclude Include="PhysicsManager\QuadTree.h" />
+    <ClInclude Include="ScriptSystemManager\ScriptSystem\LuaSystem\LuaSystem.h" />
+    <ClInclude Include="ScriptSystemManager\ScriptSystemManager.h" />
+    <ClInclude Include="ScriptSystemManager\ScriptSystem\LuaSystem\LuaTypeSpecializations.h" />
+    <ClInclude Include="ScriptSystemManager\ScriptSystem\ScriptSystem.h" />
+    <ClInclude Include="GameEntity\Component\TriggerComponent\TriggerComponent.h" />
+    <ClInclude Include="WorldTile\TileComponent\TileRenderComponent\TileRenderComponent.h" />
+    <ClInclude Include="Utilities\RandomNumberGenerator.h" />
+    <ClInclude Include="Utilities\Hash.h" />
+    <ClInclude Include="Primitives\Rect.h" />
+    <ClInclude Include="GameEntity\Component\TransformComponent\TransformComponent.h" />
+    <ClInclude Include="Utilities\IDGenerator.h" />
+    <ClInclude Include="UnitTests\FolderAssistantTests.h" />
+    <ClInclude Include="Utilities\FolderAssistant.h" />
+    <ClInclude Include="SceneManager\SceneManager.h" />
+    <ClInclude Include="SceneManager\State.h" />
+    <ClInclude Include="Utilities\Clock.h" />
+    <ClInclude Include="InputManager\InputManager.h" />
+    <ClInclude Include="Logging\Logger.h" />
+    <ClInclude Include="Graphics\RenderWindow.h" />
+    <ClInclude Include="Primitives\Vector2.h" />
+    <ClInclude Include="AssetManager\XMLManager\XMLManager.h" />
+    <ClInclude Include="WorldTile\TileComponent\TileComponent.h" />
+    <ClInclude Include="WorldTile\TileComponent\TileTransformComponent\TileTransformComponent.h" />
+    <ClInclude Include="WorldTile\WorldTile.h" />
+    <ClInclude Include="WorldTileManager\WorldTileManager.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Application\Application.cpp" />
+    <ClCompile Include="Application\Core.cpp" />
+    <ClCompile Include="AssetManager\AssetManager.cpp" />
+    <ClCompile Include="AssetManager\TextureManager\TextureManager.cpp" />
+    <ClCompile Include="Application\CoreSystems\CoreSystems.cpp" />
+    <ClCompile Include="AssetManager\XMLManager\Parsers\EntityXMLParser\EntityXMLParser.cpp" />
+    <ClCompile Include="EventManager\Event\PayloadComponent\CollisionPayload\CollisionPayload.cpp" />
+    <ClCompile Include="GameEntity\Component\BrokkrVelocity\BrokkrVelocity.cpp" />
+    <ClCompile Include="GameEntity\Component\BrokkrMoveController\BrokkrMoveController.cpp" />
+    <ClCompile Include="PhysicsManager\PhysicsManager.cpp" />
+    <ClCompile Include="EventManager\Event\Event.cpp" />
+    <ClCompile Include="EventManager\EventManager.cpp" />
+    <ClCompile Include="ExternalLibs\tinyxml2.cpp" />
+    <ClCompile Include="AssetManager\ArchiveManager\ArchiveManager.cpp" />
+    <ClCompile Include="GameEntityManager\GameEntityManager.cpp" />
+    <ClCompile Include="GameEntity\GameEntity.cpp" />
+    <ClCompile Include="Graphics\Color\Color.cpp" />
+    <ClCompile Include="Graphics\Renderer\Renderer.cpp" />
+    <ClCompile Include="Graphics\RenderPipeline\RenderPipeline.cpp" />
+    <ClCompile Include="Graphics\Texture\Texture.cpp" />
+    <ClCompile Include="Graphics\WindowHandle\WindowHandle.cpp" />
+    <ClCompile Include="GameEntity\Component\RenderComponent\SpriteComponent.cpp" />
+    <ClCompile Include="GameEntity\Component\TransformComponent\TransformComponent.cpp" />
+    <ClCompile Include="GameEntity\Component\InputComponent\InputComponent.cpp" />
+    <ClCompile Include="GameEntity\Component\RandomColorComponent\RandomColorComponent.cpp" />
+    <ClCompile Include="GameEntity\Component\HealthComponent\HealthComponent.cpp" />
+    <ClCompile Include="GameEntity\Component\ColliderComponent\ColliderComponent.cpp" />
+    <ClCompile Include="AssetManager\ScriptManager\ScriptAssetLoader.cpp" />
+    <ClCompile Include="AssetManager\ScriptManager\ScriptAssets\LuaScript.cpp" />
+    <ClCompile Include="AssetManager\XMLManager\Parsers\MapXMLParser\MapXMLParser.cpp" />
+    <ClCompile Include="PhysicsManager\QuadTree.cpp" />
+    <ClCompile Include="ScriptSystemManager\ScriptSystem\LuaSystem\LuaSystem.cpp" />
+    <ClCompile Include="ScriptSystemManager\ScriptSystemManager.cpp" />
+    <ClCompile Include="ScriptSystemManager\ScriptSystem\LuaSystem\LuaTypeSpecializations.cpp" />
+    <ClCompile Include="GameEntity\Component\TriggerComponent\TriggerComponent.cpp" />
+    <ClCompile Include="WorldTile\TileComponent\TileRenderComponent\TileRenderComponent.cpp" />
+    <ClCompile Include="Utilities\RandomNumberGenerator.cpp" />
+    <ClCompile Include="Utilities\Hash.cpp" />
+    <ClCompile Include="Utilities\IDGenerator.cpp" />
+    <ClCompile Include="UnitTests\FolderAssistantTests.cpp" />
+    <ClCompile Include="Utilities\FolderAssistant.cpp" />
+    <ClCompile Include="SceneManager\SceneManager.cpp" />
+    <ClCompile Include="Utilities\Clock.cpp" />
+    <ClCompile Include="InputManager\InputManager.cpp" />
+    <ClCompile Include="Logging\Logger.cpp" />
+    <ClCompile Include="AssetManager\XMLManager\XMLManager.cpp" />
+    <ClCompile Include="WorldTile\TileComponent\TileTransformComponent\TileTransformComponent.cpp" />
+    <ClCompile Include="WorldTile\WorldTile.cpp" />
+    <ClCompile Include="WorldTileManager\WorldTileManager.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Lua\Lua.vcxproj">
+      <Project>{10bc3946-9f99-4b38-bffe-b2b587a32c93}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
